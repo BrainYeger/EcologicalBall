@@ -11,6 +11,23 @@ public class GameManager : Singleton<GameManager>
     public List<Consumer> AllConsumer;
     public List<Producer> AllProducer;
 
+    public EnvironmentBlock FindBlock(Vector3 pos)
+    {
+        int x = (int)(pos.x + 4.5);
+        if (x < 0)
+            x = 0;
+        else if (x > 9)
+            x = 9;
+
+        int y = (int)(pos.z + 4.5);
+        if (y < 0)
+            y = 0;
+        else if (y > 9)
+            y = 9;
+
+        return AllBlock[x, y];
+    }
+
     void AllBreathe()
     {
         foreach(EnvironmentBlock SelectBlock in AllBlock)
@@ -65,8 +82,7 @@ public class GameManager : Singleton<GameManager>
                 foreach (Producer t in SelectProducer)
                 {
                     t.Breathe(t.OrganicMatterComsuptionTick);
-                    if (t.NowLowOxygenTime != 0)
-                        t.NowLowOxygenTime--;
+                    t.NowLowOxygenTime++;
                 }
                 SelectBlock.Oxygen = 0;
             }
@@ -105,40 +121,67 @@ public class GameManager : Singleton<GameManager>
                 if (isSort) break;
             }
             double AllLuminousIntensity = SelectBlock.LuminousIntensity;
-            double CO2Rate = SelectBlock.CarbonDioxide / AllCO2Need;
-            double H2ORate = SelectBlock.H2O / AllH2ONeed;
-            foreach (Producer t in SelectProducer)
+            if (AllCO2Need <= SelectBlock.CarbonDioxide && AllH2ONeed <= SelectBlock.H2O)
             {
-                double CO2 = CO2Rate * t.CarbonDioxideComsuptionTick;
-                double H2O = H2ORate * t.H2OComsuptionTick;
-                if (CO2 * Producer.CarbonDioxideComsuptionToH2OComsuption <= H2O)
+                SelectBlock.CarbonDioxide -= AllCO2Need;
+                SelectBlock.H2O -= AllH2ONeed;
+                foreach (Producer t in SelectProducer)
                 {
-                    H2O = CO2 * Producer.CarbonDioxideComsuptionToH2OComsuption;
+                    double efficiency;
+                    if (AllLuminousIntensity <= t.LuminousIntensityNeedTick)
+                    {
+                        efficiency = (AllLuminousIntensity / t.LuminousIntensityNeedTick) * (SelectBlock.Fertility / t.FertilityNeedTick);
+                        AllLuminousIntensity = 0;
+                    }
+                    else
+                    {
+                        efficiency = (SelectBlock.Fertility / t.FertilityNeedTick);
+                        AllLuminousIntensity -= t.LuminousIntensityNeedTick;
+                    }
+                    SelectBlock.Oxygen += efficiency * AllCO2Need * Producer.CarbonDioxideComsuptionToOxygenGeneration;
+                    t.NowOrganicMatter += efficiency * AllCO2Need * Producer.CarbonDioxideComsuptionToOrganicMatterGeneration;
+                    if (t.NowOrganicMatter > t.MaxOrganicMatter)
+                        t.NowOrganicMatter = t.MaxOrganicMatter;
+
                 }
-                else
-                    CO2 = H2O / Producer.CarbonDioxideComsuptionToH2OComsuption;
-                SelectBlock.CarbonDioxide -= CO2;
-                SelectBlock.H2O -= H2O;
-                double efficiency;
-                if (AllLuminousIntensity <= t.LuminousIntensityNeedTick)
+            }
+            else
+            {
+                double CO2Rate = SelectBlock.CarbonDioxide / AllCO2Need;
+                double H2ORate = SelectBlock.H2O / AllH2ONeed;
+                foreach (Producer t in SelectProducer)
                 {
-                    efficiency = (AllLuminousIntensity / t.LuminousIntensityNeedTick) * (SelectBlock.Fertility / t.FertilityNeedTick);
-                    AllLuminousIntensity = 0;
+                    double CO2 = CO2Rate * t.CarbonDioxideComsuptionTick;
+                    double H2O = H2ORate * t.H2OComsuptionTick;
+                    if (CO2 * Producer.CarbonDioxideComsuptionToH2OComsuption <= H2O)
+                    {
+                        H2O = CO2 * Producer.CarbonDioxideComsuptionToH2OComsuption;
+                    }
+                    else
+                        CO2 = H2O / Producer.CarbonDioxideComsuptionToH2OComsuption;
+                    SelectBlock.CarbonDioxide -= CO2;
+                    SelectBlock.H2O -= H2O;
+                    double efficiency;
+                    if (AllLuminousIntensity <= t.LuminousIntensityNeedTick)
+                    {
+                        efficiency = (AllLuminousIntensity / t.LuminousIntensityNeedTick) * (SelectBlock.Fertility / t.FertilityNeedTick);
+                        AllLuminousIntensity = 0;
+                    }
+                    else
+                    {
+                        efficiency = (SelectBlock.Fertility / t.FertilityNeedTick);
+                        AllLuminousIntensity -= t.LuminousIntensityNeedTick;
+                    }
+                    SelectBlock.Oxygen += efficiency * CO2 * Producer.CarbonDioxideComsuptionToOxygenGeneration;
+                    t.NowOrganicMatter += efficiency * CO2 * Producer.CarbonDioxideComsuptionToOrganicMatterGeneration;
+                    if (t.NowOrganicMatter > t.MaxOrganicMatter)
+                        t.NowOrganicMatter = t.MaxOrganicMatter;
                 }
-                else
-                {
-                    efficiency = (SelectBlock.Fertility / t.FertilityNeedTick);
-                    AllLuminousIntensity -= t.LuminousIntensityNeedTick;
-                }
-                SelectBlock.Oxygen += efficiency * CO2 * Producer.CarbonDioxideComsuptionToOxygenGeneration;
-                t.NowOrganicMatter += efficiency * CO2 * Producer.CarbonDioxideComsuptionToOrganicMatterGeneration;
-                if (t.NowOrganicMatter > t.MaxOrganicMatter)
-                    t.NowOrganicMatter = t.MaxOrganicMatter;
             }
         }
     }
 
-    void Start()
+    private void Awake()
     {
         BlockSize = 10;
         AllBlock = new EnvironmentBlock[BlockSize, BlockSize];
@@ -148,8 +191,14 @@ public class GameManager : Singleton<GameManager>
         AllProducer = new List<Producer>();
     }
 
+    void Start()
+    {
+        
+    }
+
     void Update()
     {
-        //AllBreathe();
+        AllBreathe();
+        AllPhotoSynthesis();
     }
 }

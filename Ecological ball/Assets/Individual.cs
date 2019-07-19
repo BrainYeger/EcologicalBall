@@ -14,7 +14,7 @@ public abstract class Individual : MonoBehaviour
     public double MinOrganicMatter;
     public double NowOrganicMatter;
 
-    public static double MinOrganicMatterRate;
+    public static double MinOrganicMatterRate = 0.25;
 
     public double OrganicMatterComsuptionTick;
     public double OxygenComsuptionTick;
@@ -24,10 +24,10 @@ public abstract class Individual : MonoBehaviour
     public int MaxLowOxygenTime;
     public int NowLowOxygenTime;
 
-    public static double MaxOrganicMatterToOrganicMatterComsuptionRate;
-    public static double OrganicMatterComsuptionToOxygenComsuptionRate;
-    public static double OxygenComsuptionToCarbonDioxideComsuptionRate;
-    public static double OxygenComsuptionToH2OComsuptionRate;
+    public static double MaxOrganicMatterToOrganicMatterComsuptionRate = 0.0001;
+    public static double OrganicMatterComsuptionToOxygenComsuptionRate = 0.04;
+    public static double OxygenComsuptionToCarbonDioxideComsuptionRate = 1;
+    public static double OxygenComsuptionToH2OComsuptionRate = 1;
 
     public void Breathe(double omc)
     {

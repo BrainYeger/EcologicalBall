@@ -13,10 +13,10 @@ public class Producer : Individual
 
     public int height;
 
-    public static double CarbonDioxideComsuptionToH2OComsuption;
-    public static double CarbonDioxideComsuptionToOxygenGeneration;
-    public static double CarbonDioxideComsuptionToOrganicMatterGeneration;
-    public static double MaxFertilityConversionRate;
+    public static double CarbonDioxideComsuptionToH2OComsuption = 1;
+    public static double CarbonDioxideComsuptionToOxygenGeneration = 1;
+    public static double CarbonDioxideComsuptionToOrganicMatterGeneration = 15;
+    public static double MaxFertilityConversionRate = 2;
 
     public static double ReproductionConversionRate;
 
@@ -33,7 +33,8 @@ public class Producer : Individual
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameManager.Instance.AllProducer.Add(this);
+        NowBlock = GameManager.Instance.FindBlock(transform.position);
     }
 
     // Update is called once per frame

@@ -14,6 +14,12 @@ public class Consumer : Individual
 
     }
 
+    private void Move(Vector3 t)
+    {
+        transform.position += t;
+        NowBlock = GameManager.Instance.FindBlock(transform.position);
+    }
+
     public void Prey()
     {
         List<FoodChain> AllPredator = new List<FoodChain>();
@@ -30,15 +36,20 @@ public class Consumer : Individual
                     {
                         //IsGet = true;
                         Vector3 direction = transform.position - t.transform.position;
-                        transform.position += direction.normalized * (float)SpeedTick;
+                        Move(direction.normalized * (float)SpeedTick);
                         return;
                     }
                 }
                 //if (!IsGet) return;
             }
-            if (HungryBordenRate * MaxOrganicMatter < NowOrganicMatter)
-                return;
-            foreach(FoodChain x in AllPrey)
+        }
+
+        if (HungryBordenRate * MaxOrganicMatter < NowOrganicMatter)
+            return;
+
+        foreach (Consumer t in GameManager.Instance.AllConsumer)
+        {
+            foreach (FoodChain x in AllPrey)
             {
                 if (x.type == t.Special)
                 {
@@ -46,18 +57,27 @@ public class Consumer : Individual
                     {
                         //IsGet = true;
                         Vector3 direction = t.transform.position - transform.position;
-                        transform.position += direction.normalized * (float)SpeedTick;
+                        Move(direction.normalized * (float)SpeedTick);
                         return;
                     }
                 }
             }
         }
+
+        //go anywhere
+
+        int x1 = Random.Range(0, 100);
+        int z1 = Random.Range(0, 100);
+        Vector3 tt = new Vector3(x1, 0, z1);
+        Move(tt.normalized * (float)SpeedTick);
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
         GameManager.Instance.AllConsumer.Add(this);
+        NowBlock = GameManager.Instance.FindBlock(transform.position);
     }
 
     // Update is called once per frame

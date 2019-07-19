@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnvironmentBlock : MonoBehaviour
 {
-    const int BlockSize = 10;
-    public static EnvironmentBlock [,]AllBlock = new EnvironmentBlock[BlockSize,BlockSize];
+    //const int BlockSize = 10;
+    //public static EnvironmentBlock [,]AllBlock = new EnvironmentBlock[BlockSize,BlockSize];
 
     [SerializeField]int indexX;
     [SerializeField]int indexY;
@@ -79,11 +79,18 @@ public class EnvironmentBlock : MonoBehaviour
         return false;
     }
 
+    private void Awake()
+    {
+        GameManager.Instance.AllBlock[indexX, indexY] = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        indexX = 0;
-        indexY = 0;
+        //indexX = 0;
+        //indexY = 0;
+
+        
     }
 
     // Update is called once per frame
