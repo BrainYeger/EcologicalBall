@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamVR", "SteamVR.csproj", "{CE71E927-ADB3-F87A-A531-81421832F8DC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{475AAD22-7C08-8B34-0801-CD98605AC726}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{EB328D8F-9B55-EEC2-963E-CD141526D69B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{475AAD22-7C08-8B34-0801-CD98605AC726}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{93D8E047-8E09-0B48-A274-147F1BE34923}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamVR_Editor", "SteamVR_Editor.csproj", "{B0B597B3-9719-60DD-A844-71805C764120}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamVR_Input_Editor", "SteamVR_Input_Editor.csproj", "{15235F15-5D78-0FFF-8C6F-43128BB4C28D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamVR_Windows_EditorHelper", "SteamVR_Windows_EditorHelper.csproj", "{9F95340F-5BD2-C079-C7DE-9B25EE22B875}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{93D8E047-8E09-0B48-A274-147F1BE34923}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,18 @@ Global
 		{CE71E927-ADB3-F87A-A531-81421832F8DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE71E927-ADB3-F87A-A531-81421832F8DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE71E927-ADB3-F87A-A531-81421832F8DC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EB328D8F-9B55-EEC2-963E-CD141526D69B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB328D8F-9B55-EEC2-963E-CD141526D69B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB328D8F-9B55-EEC2-963E-CD141526D69B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB328D8F-9B55-EEC2-963E-CD141526D69B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{475AAD22-7C08-8B34-0801-CD98605AC726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{475AAD22-7C08-8B34-0801-CD98605AC726}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{475AAD22-7C08-8B34-0801-CD98605AC726}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{475AAD22-7C08-8B34-0801-CD98605AC726}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB328D8F-9B55-EEC2-963E-CD141526D69B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB328D8F-9B55-EEC2-963E-CD141526D69B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB328D8F-9B55-EEC2-963E-CD141526D69B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB328D8F-9B55-EEC2-963E-CD141526D69B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93D8E047-8E09-0B48-A274-147F1BE34923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93D8E047-8E09-0B48-A274-147F1BE34923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93D8E047-8E09-0B48-A274-147F1BE34923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93D8E047-8E09-0B48-A274-147F1BE34923}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B0B597B3-9719-60DD-A844-71805C764120}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B0B597B3-9719-60DD-A844-71805C764120}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0B597B3-9719-60DD-A844-71805C764120}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,10 +49,6 @@ Global
 		{9F95340F-5BD2-C079-C7DE-9B25EE22B875}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F95340F-5BD2-C079-C7DE-9B25EE22B875}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F95340F-5BD2-C079-C7DE-9B25EE22B875}.Release|Any CPU.Build.0 = Release|Any CPU
-		{93D8E047-8E09-0B48-A274-147F1BE34923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{93D8E047-8E09-0B48-A274-147F1BE34923}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{93D8E047-8E09-0B48-A274-147F1BE34923}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{93D8E047-8E09-0B48-A274-147F1BE34923}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

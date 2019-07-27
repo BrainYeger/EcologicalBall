@@ -62,7 +62,7 @@ Material:
     - _Distance: 318
     - _DstBlend: 10
     - _EmissionScaleUI: 0
-    - _Falloff: 3.4
+    - _Falloff: 1.5
     - _GlossMapScale: 1
     - _Glossiness: 1
     - _GlossyReflections: 1

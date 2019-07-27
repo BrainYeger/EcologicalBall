@@ -44,7 +44,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100108, guid: 9a5a6e2d8587a644b9b2da5d4940b5e3, type: 3}
       propertyPath: m_Name
-      value: Wolf Magic
+      value: Wolf Magic Variant
       objectReference: {fileID: 0}
     - target: {fileID: 100064, guid: 9a5a6e2d8587a644b9b2da5d4940b5e3, type: 3}
       propertyPath: m_IsActive
@@ -93,6 +93,18 @@ PrefabInstance:
     - target: {fileID: 400108, guid: 9a5a6e2d8587a644b9b2da5d4940b5e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: 9a5a6e2d8587a644b9b2da5d4940b5e3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: 9a5a6e2d8587a644b9b2da5d4940b5e3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400108, guid: 9a5a6e2d8587a644b9b2da5d4940b5e3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 13700002, guid: 9a5a6e2d8587a644b9b2da5d4940b5e3, type: 3}
       propertyPath: m_Materials.Array.data[0]

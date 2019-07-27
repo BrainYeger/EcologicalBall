@@ -18,7 +18,7 @@ Shader "SyntyStudios/SkyGradient"
 		Cull Back
 		CGPROGRAM
 		#pragma target 3.0
-		#pragma surface surf Unlit keepalpha noshadow nofog 
+		#pragma surface surf Unlet keepalpha noshadow nofog 
 		struct Input
 		{
 			float3 worldPos;
@@ -30,7 +30,7 @@ Shader "SyntyStudios/SkyGradient"
 		uniform float _Distance;
 		uniform float _Falloff;
 
-		inline fixed4 LightingUnlit( SurfaceOutput s, half3 lightDir, half atten )
+		inline fixed4 LightingUnlet( SurfaceOutput s, half3 lightDir, half atten )
 		{
 			return fixed4 ( 0, 0, 0, s.Alpha );
 		}

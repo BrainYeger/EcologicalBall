@@ -1,0 +1,174 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b6a6c0080c6f8543861ae631008794c, type: 3}
+  m_Name: crearues
+  m_EditorClassIdentifier: 
+  animals:
+  - Name: "\u718A"
+    Special: 0
+    creaturePrefab: {fileID: 1390276149824892, guid: 82ed06951d4dc544c9e3e0ace63e2751,
+      type: 3}
+    MaxOrganicMatter: 0
+    OrganicMatterComsuptionTick: 0
+    MaxLowOxygenTime: 0
+    SpeedTick: 0
+    eyeSlight: 0
+  - Name: "\u725B"
+    Special: 0
+    creaturePrefab: {fileID: 1244760467543844, guid: cbde77ed900f8944a8604fa92b6699f0,
+      type: 3}
+    MaxOrganicMatter: 0
+    OrganicMatterComsuptionTick: 0
+    MaxLowOxygenTime: 0
+    SpeedTick: 0
+    eyeSlight: 0
+  - Name: "\u957F\u9888\u9E7F"
+    Special: 0
+    creaturePrefab: {fileID: 1830278637828938, guid: 0e8a4633cf092874cbe7b0d0c195f96a,
+      type: 3}
+    MaxOrganicMatter: 0
+    OrganicMatterComsuptionTick: 0
+    MaxLowOxygenTime: 0
+    SpeedTick: 0
+    eyeSlight: 0
+  - Name: "\u9A6C"
+    Special: 0
+    creaturePrefab: {fileID: 1847083141549040, guid: 8d842895cf462354c9d87348eaf25e67,
+      type: 3}
+    MaxOrganicMatter: 0
+    OrganicMatterComsuptionTick: 0
+    MaxLowOxygenTime: 0
+    SpeedTick: 0
+    eyeSlight: 0
+  - Name: "\u72FC"
+    Special: 0
+    creaturePrefab: {fileID: 1203947230629886390, guid: 333c782e04f3cdd4d8f2b5498bfd2f43,
+      type: 3}
+    MaxOrganicMatter: 0
+    OrganicMatterComsuptionTick: 0
+    MaxLowOxygenTime: 0
+    SpeedTick: 0
+    eyeSlight: 0
+  plants:
+  - Name: "\u68111"
+    Special: 0
+    creaturePrefab: {fileID: 1500899924992442, guid: a6ed5a99e58833d40b6b93a27ec1483e,
+      type: 3}
+    MaxOrganicMatter: 0
+    OrganicMatterComsuptionTick: 0
+    MaxLowOxygenTime: 0
+    CarbonDioxideComsuptionTick: 0
+    LuminousIntensityNeedTick: 0
+    FertilityNeedTick: 0
+    height: 0
+  - Name: "\u68111"
+    Special: 0
+    creaturePrefab: {fileID: 1325612589990884, guid: 22b05d2d3419f98478811e41cb056fd7,
+      type: 3}
+    MaxOrganicMatter: 0
+    OrganicMatterComsuptionTick: 0
+    MaxLowOxygenTime: 0
+    CarbonDioxideComsuptionTick: 0
+    LuminousIntensityNeedTick: 0
+    FertilityNeedTick: 0
+    height: 0
+  - Name: "\u68112"
+    Special: 0
+    creaturePrefab: {fileID: 1031576294622548, guid: e8212432ee0bf01408f632029f04bf08,
+      type: 3}
+    MaxOrganicMatter: 0
+    OrganicMatterComsuptionTick: 0
+    MaxLowOxygenTime: 0
+    CarbonDioxideComsuptionTick: 0
+    LuminousIntensityNeedTick: 0
+    FertilityNeedTick: 0
+    height: 0
+  - Name: "\u68111"
+    Special: 0
+    creaturePrefab: {fileID: 1182756067964316, guid: 87988c51d5126eb4389ea80ba39de0a9,
+      type: 3}
+    MaxOrganicMatter: 0
+    OrganicMatterComsuptionTick: 0
+    MaxLowOxygenTime: 0
+    CarbonDioxideComsuptionTick: 0
+    LuminousIntensityNeedTick: 0
+    FertilityNeedTick: 0
+    height: 0
+  - Name: "\u68111"
+    Special: 0
+    creaturePrefab: {fileID: 1646885935188752, guid: a0797caf27b604649bf2a76eafb15ddc,
+      type: 3}
+    MaxOrganicMatter: 0
+    OrganicMatterComsuptionTick: 0
+    MaxLowOxygenTime: 0
+    CarbonDioxideComsuptionTick: 0
+    LuminousIntensityNeedTick: 0
+    FertilityNeedTick: 0
+    height: 0
+  grass:
+  - Name: "\u83491"
+    Special: 0
+    creaturePrefab: {fileID: 1087120402720156, guid: 3363e72948b3be047a41613c1e8aadef,
+      type: 3}
+    MaxOrganicMatter: 0
+    OrganicMatterComsuptionTick: 0
+    MaxLowOxygenTime: 0
+    CarbonDioxideComsuptionTick: 0
+    LuminousIntensityNeedTick: 0
+    FertilityNeedTick: 0
+    height: 0
+  - Name: "\u83492"
+    Special: 0
+    creaturePrefab: {fileID: 1346982405202136, guid: 89b7249f174a29240af6d3098978b4d0,
+      type: 3}
+    MaxOrganicMatter: 0
+    OrganicMatterComsuptionTick: 0
+    MaxLowOxygenTime: 0
+    CarbonDioxideComsuptionTick: 0
+    LuminousIntensityNeedTick: 0
+    FertilityNeedTick: 0
+    height: 0
+  - Name: "\u83493"
+    Special: 0
+    creaturePrefab: {fileID: 1477781090313130, guid: e2033d10b45309044b39f1a4a3a136e6,
+      type: 3}
+    MaxOrganicMatter: 0
+    OrganicMatterComsuptionTick: 0
+    MaxLowOxygenTime: 0
+    CarbonDioxideComsuptionTick: 0
+    LuminousIntensityNeedTick: 0
+    FertilityNeedTick: 0
+    height: 0
+  - Name: "\u83494"
+    Special: 0
+    creaturePrefab: {fileID: 3845464226022880684, guid: 267b578151cddc24b9f0c6aa8330a3b8,
+      type: 3}
+    MaxOrganicMatter: 0
+    OrganicMatterComsuptionTick: 0
+    MaxLowOxygenTime: 0
+    CarbonDioxideComsuptionTick: 0
+    LuminousIntensityNeedTick: 0
+    FertilityNeedTick: 0
+    height: 0
+  MaxOrganicMatterToOrganicMatterComsuptionRate: 0.00009999999747378752
+  OrganicMatterComsuptionToOxygenComsuptionRate: 0.03999999910593033
+  OxygenComsuptionToCarbonDioxideComsuptionRate: 1
+  OxygenComsuptionToH2OComsuptionRate: 1
+  MinOrganicMatterRate: 0.25
+  HungryBordenRate: 0.5
+  CarbonDioxideComsuptionToH2OComsuption: 1
+  CarbonDioxideComsuptionToOxygenGeneration: 1
+  CarbonDioxideComsuptionToOrganicMatterGeneration: 15
+  MaxFertilityConversionRate: 2
+  ReproductionConversionRate: 0
+  RottingRate: 0
+  DiffusionSpeed: 0
