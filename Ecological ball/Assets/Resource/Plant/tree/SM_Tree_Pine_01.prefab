@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 33779188082730836}
   - component: {fileID: 23590977178508074}
   - component: {fileID: 205885470944183202}
+  - component: {fileID: 3524053940054572012}
   m_Layer: 0
   m_Name: SM_Tree_Pine_01
   m_TagString: Untagged
@@ -259,3 +260,16 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23171540964131236}
   m_Enabled: 1
+--- !u!114 &3524053940054572012
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1182756067964316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0025b0139922fa459ea53103511248c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  witheredTree: {fileID: 4300000, guid: 8671524d50a5169468e7f1f9060eed98, type: 3}

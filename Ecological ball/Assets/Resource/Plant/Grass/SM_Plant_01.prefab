@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4472446716753680}
   - component: {fileID: 33273443349551124}
   - component: {fileID: 23789206982830322}
+  - component: {fileID: 9124889888648815211}
   m_Layer: 0
   m_Name: SM_Plant_01
   m_TagString: Untagged
@@ -77,3 +78,15 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &9124889888648815211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1087120402720156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f12028553e104f459d849a1fa7db17f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 33063310634051164}
   - component: {fileID: 23737414935195854}
   - component: {fileID: 205676229864877180}
+  - component: {fileID: 1469717408028028027}
   m_Layer: 0
   m_Name: SM_Tree_Generic_01
   m_TagString: Untagged
@@ -258,3 +259,16 @@ LODGroup:
     renderers:
     - renderer: {fileID: 23490243049051832}
   m_Enabled: 1
+--- !u!114 &1469717408028028027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325612589990884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0025b0139922fa459ea53103511248c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  witheredTree: {fileID: 4300000, guid: 4a11ff05ccc4f424e8b1764e1dc6b1c3, type: 3}

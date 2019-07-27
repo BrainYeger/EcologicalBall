@@ -180,6 +180,11 @@
     <Compile Include="Assets\Malbers Animations\Common\Scripts\Utility\TransformAnimation.cs" />
     <Compile Include="Assets\Malbers Animations\Common\Scripts\Utility\UseTransform.cs" />
     <Compile Include="Assets\Producer.cs" />
+    <Compile Include="Assets\scripts\AniGlass.cs" />
+    <Compile Include="Assets\scripts\AniOtherAni.cs" />
+    <Compile Include="Assets\scripts\AniTree.cs" />
+    <Compile Include="Assets\scripts\AniWolf.cs" />
+    <Compile Include="Assets\scripts\CreatureAnimation.cs" />
     <Compile Include="Assets\Singleton.cs" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />

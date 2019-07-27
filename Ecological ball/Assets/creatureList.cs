@@ -17,14 +17,14 @@ public class Creature
 }
 
 [Serializable]
-public class Animal:Creature
+public class AnimalData:Creature
 {
     public double SpeedTick;
     public double eyeSlight;
 }
 
 [Serializable]
-public class Plant:Creature
+public class PlantData:Creature
 {
     public double CarbonDioxideComsuptionTick;
     public double LuminousIntensityNeedTick;
@@ -40,17 +40,17 @@ public class creatureList : ScriptableObject
     [Space(10)]
     [Header("动物")]
     [SerializeField]
-    public List<Animal> animals = new List<Animal>();
+    public List<AnimalData> animals = new List<AnimalData>();
 
     [Space(10)]
     [Header("树木")]
     [SerializeField]
-    public List<Plant> plants = new List<Plant>();
+    public List<PlantData> plants = new List<PlantData>();
 
     [Space(10)]
     [Header("草")]
     [SerializeField]
-    public List<Plant> grass = new List<Plant>();
+    public List<PlantData> grass = new List<PlantData>();
 
     public double MaxOrganicMatterToOrganicMatterComsuptionRate = 0.0001f;
     public double OrganicMatterComsuptionToOxygenComsuptionRate = 0.04f;
