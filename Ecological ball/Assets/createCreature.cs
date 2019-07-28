@@ -49,7 +49,7 @@ public class createCreature : MonoBehaviour
             }
         }
     }
-    void ChangeCreate(bool right)
+    public void ChangeCreate(bool right)
     {
         int max = 0;
         switch (nowKind)
@@ -74,7 +74,7 @@ public class createCreature : MonoBehaviour
         ChangeDemo();
 
     }
-    void ChangeKind(bool right)
+    public void ChangeKind(bool right)
     {
         if (right)
         {
@@ -115,7 +115,7 @@ public class createCreature : MonoBehaviour
 
         }
     }
-    void AddCreature(Vector3 pos,Vector3 rotate)
+    public void AddCreature(Vector3 pos,Vector3 rotate)
     {
         GameObject creature = null;
         switch (nowKind)
