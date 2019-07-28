@@ -7,9 +7,10 @@ public class EnvironmentBlock : MonoBehaviour
     //const int BlockSize = 10;
     //public static EnvironmentBlock [,]AllBlock = new EnvironmentBlock[BlockSize,BlockSize];
 
-    [SerializeField]int indexX;
-    [SerializeField]int indexY;
+    public int indexX;
+    public int indexY;
 
+    public Vector3 position;
     public double Oxygen;
     public double CarbonDioxide;
     public double LuminousIntensity;
@@ -19,7 +20,7 @@ public class EnvironmentBlock : MonoBehaviour
     public double RottingSpeed;
 
     public static double RottingRate;
-    public static double DiffusionSpeed;
+    public static double DiffusionSpeed = 0.002;
 
     void Diffuse(EnvironmentBlock t)
     {
@@ -81,6 +82,11 @@ public class EnvironmentBlock : MonoBehaviour
 
     private void Awake()
     {
+        position = transform.position;
+        Oxygen = 100;
+        CarbonDioxide = 100;
+        LuminousIntensity = 160;
+        RottingSpeed = 30;
         GameManager.Instance.AllBlock[indexX, indexY] = this;
     }
 
@@ -89,24 +95,23 @@ public class EnvironmentBlock : MonoBehaviour
     {
         //indexX = 0;
         //indexY = 0;
-
         
     }
 
     // Update is called once per frame
     void Update()
-    {/*
+    {
         //to up
         if (indexX > 0)
-            Diffuse(AllBlock[indexX - 1,indexY]);
+            Diffuse(GameManager.Instance.AllBlock[indexX - 1,indexY]);
         //to down
-        if (indexX < BlockSize - 1)
-            Diffuse(AllBlock[indexX + 1,indexY]);
+        if (indexX < 9)
+            Diffuse(GameManager.Instance.AllBlock[indexX + 1,indexY]);
         //to left
         if (indexY > 0)
-            Diffuse(AllBlock[indexX,indexY - 1]);
+            Diffuse(GameManager.Instance.AllBlock[indexX,indexY - 1]);
         //to right
-        if (indexY < BlockSize - 1)
-            Diffuse(AllBlock[indexX,indexY + 1]);*/
+        if (indexY < 9)
+            Diffuse(GameManager.Instance.AllBlock[indexX,indexY + 1]);
     }
 }
