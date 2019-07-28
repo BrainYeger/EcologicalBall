@@ -11,6 +11,32 @@ public class GameManager : Singleton<GameManager>
     public List<Consumer> AllConsumer;
     public List<Producer> AllProducer;
 
+    private double globaloxygen;
+    public double GlobalOxygen
+    {
+        get
+        {
+            double OxygenSum = 0;
+            for (int i = 0; i < 10; i++)
+                for (int j = 0; j < 10; j++)
+                    OxygenSum += AllBlock[i, j].Oxygen;
+            return OxygenSum;
+        }
+    }
+
+    private double globalcarbondioxide;
+    public double GlobalCarbonDioxide
+    {
+        get
+        {
+            double CarbonDioxideSum = 0;
+            for (int i = 0; i < 10; i++)
+                for (int j = 0; j < 10; j++)
+                    CarbonDioxideSum += AllBlock[i, j].CarbonDioxide;
+            return CarbonDioxideSum;
+        }
+    }
+
     public double GetH2O(Vector3 pos)
     {
         EnvironmentBlock t = FindBlock(pos);
@@ -20,22 +46,48 @@ public class GameManager : Singleton<GameManager>
         double LerpX, LerpY;
         double length = AllBlock[1, 0].position.x - AllBlock[0, 0].position.x;
         if (x == 0)
-            LerpY = (t.H2O - AllBlock[1, y].H2O) * (pos.z - AllBlock[1, y].position.z) / length + AllBlock[1, y].H2O;
+            LerpY = (t.H2O - AllBlock[1, y].H2O) * Mathf.Abs(pos.x + 4) + AllBlock[1, y].H2O;
         else if (x == 9)
-            LerpY = (t.H2O - AllBlock[8, y].H2O) * (pos.z - AllBlock[8, y].position.z) / length + AllBlock[8, y].H2O;
+            LerpY = (t.H2O - AllBlock[8, y].H2O) * Mathf.Abs(pos.x - 4) + AllBlock[8, y].H2O;
         else
-            LerpY = (AllBlock[x + 1, y].H2O - AllBlock[x - 1, y].H2O) * (pos.z - AllBlock[x - 1, y].position.z) / length + AllBlock[x - 1, y].H2O;
+            LerpY = (AllBlock[x + 1, y].H2O - AllBlock[x - 1, y].H2O) * Mathf.Abs(pos.x - x + 4) + AllBlock[x - 1, y].H2O;
 
         if (y == 0)
-            LerpX = (t.H2O - AllBlock[x, 1].H2O) * (pos.x - AllBlock[x, 1].position.x) / length + AllBlock[x, 1].H2O;
-        else if (x == 9)
-            LerpX = (t.H2O - AllBlock[x, 8].H2O) * (pos.x - AllBlock[x, 8].position.x) / length + AllBlock[x, 8].H2O;
+            LerpX = (t.H2O - AllBlock[x, 1].H2O) * Mathf.Abs(pos.z + 4) + AllBlock[x, 1].H2O;
+        else if (y == 9)
+            LerpX = (t.H2O - AllBlock[x, 8].H2O) * Mathf.Abs(pos.z - 4) + AllBlock[x, 8].H2O;
         else
-            LerpX = (AllBlock[x, y + 1].H2O - AllBlock[x, y - 1].H2O) * (pos.x - AllBlock[x, y - 1].position.x) / length + AllBlock[x, y - 1].H2O;
+            LerpX = (AllBlock[x, y + 1].H2O - AllBlock[x, y - 1].H2O) * Mathf.Abs(pos.z - y + 4) + AllBlock[x, y - 1].H2O;
 
         return (LerpX + LerpY + t.H2O) / 3;
 
     }
+    public double GetRich(Vector3 pos)
+    {
+        EnvironmentBlock t = FindBlock(pos);
+        int x = t.indexX;
+        int y = t.indexY;
+
+        double LerpX, LerpY;
+        double length = AllBlock[1, 0].position.x - AllBlock[0, 0].position.x;
+        if (x == 0)
+            LerpY = (t.Fertility - AllBlock[1, y].Fertility) * Mathf.Abs(pos.x + 4) + AllBlock[1, y].Fertility;
+        else if (x == 9)
+            LerpY = (t.Fertility - AllBlock[8, y].Fertility) * Mathf.Abs(pos.x - 4) + AllBlock[8, y].Fertility;
+        else
+            LerpY = (AllBlock[x + 1, y].Fertility - AllBlock[x - 1, y].Fertility) * Mathf.Abs(pos.x - x + 4) + AllBlock[x - 1, y].Fertility;
+
+        if (y == 0)
+            LerpX = (t.Fertility - AllBlock[x, 1].Fertility) * Mathf.Abs(pos.z + 4) + AllBlock[x, 1].Fertility;
+        else if (y == 9)
+            LerpX = (t.Fertility - AllBlock[x, 8].Fertility) * Mathf.Abs(pos.z - 4) + AllBlock[x, 8].Fertility;
+        else
+            LerpX = (AllBlock[x, y + 1].Fertility - AllBlock[x, y - 1].Fertility) * Mathf.Abs(pos.z - y + 4) + AllBlock[x, y - 1].Fertility;
+
+        return (LerpX + LerpY + t.Fertility) / 3;
+
+    }
+
     public EnvironmentBlock FindBlock(Vector3 pos)
     {
         int x = (int)(pos.x + 4.5);

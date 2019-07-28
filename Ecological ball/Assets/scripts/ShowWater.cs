@@ -6,6 +6,9 @@ public class ShowWater : MonoBehaviour
 {
     public Color Color1;
     public Color Color2;
+    public Color Color3;
+    public Color Color4;
+    private bool isShowWater = true;
     private MeshRenderer mr = null;
     private MeshFilter mf = null;
     private Mesh mesh = null;
@@ -32,9 +35,27 @@ public class ShowWater : MonoBehaviour
         foreach(Vector3 p in point)
         {
             double c;
-            c = GameManager.Instance.GetH2O(p);
-            lc.Add(Color.Lerp(Color1,Color2,(float)c/255));
+            
+            if (isShowWater)
+            {
+                c = GameManager.Instance.GetH2O(p);
+                lc.Add(Color.Lerp(Color1, Color2, (float)(c - 100) / 200));
+            }
+            else
+            {
+                c = GameManager.Instance.GetRich(p);
+                lc.Add(Color.Lerp(Color3, Color4, (float)(c - 10) / 110));
+            }
         }
         mesh.SetColors(lc);
+    }
+
+    public void ShowMyWater()
+    {
+        isShowWater = true;
+    }
+    public void ShowRich()
+    {
+        isShowWater = false;
     }
 }
