@@ -8,6 +8,8 @@ public class Consumer : Individual
     public double eyeSight;
 
     private double HungryBordenRate = 0.5;
+    private int WalkTick;
+    private Vector3 WalkDirection;
 
     protected override void Reproduct()
     {
@@ -17,6 +19,7 @@ public class Consumer : Individual
     private void Move(Vector3 t)
     {
         transform.position += t;
+        transform.eulerAngles = Quaternion.FromToRotation(Vector3.forward, t).eulerAngles;
         NowBlock = GameManager.Instance.FindBlock(transform.position);
     }
 
@@ -82,10 +85,18 @@ public class Consumer : Individual
 
         //go anywhere
 
-        /*int x1 = Random.Range(0, 100);
-        int z1 = Random.Range(0, 100);
-        Vector3 tt = new Vector3(x1, 0, z1);
-        Move(tt.normalized * (float)SpeedTick);*/
+        if (WalkTick == 60)
+        {
+            WalkTick = 0;
+            int x1 = Random.Range(-100, 100);
+            int z1 = Random.Range(-100, 100);
+            Vector3 tt = new Vector3(x1, 0, z1);
+            WalkDirection = tt.normalized;
+        }
+        else
+            WalkTick++;
+
+        Move(WalkDirection * (float)SpeedTick);
 
     }
 

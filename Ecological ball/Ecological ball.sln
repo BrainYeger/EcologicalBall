@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
+# Visual Studio 16
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{475AAD22-7C08-8B34-0801-CD98605AC726}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamVR", "SteamVR.csproj", "{CE71E927-ADB3-F87A-A531-81421832F8DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{EB328D8F-9B55-EEC2-963E-CD141526D69B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SteamVR_Actions", "SteamVR_Actions.csproj", "{A8FDB4C2-AFE7-4737-4D37-8101C6BD11F4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{93D8E047-8E09-0B48-A274-147F1BE34923}"
 EndProject
@@ -33,6 +35,10 @@ Global
 		{EB328D8F-9B55-EEC2-963E-CD141526D69B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB328D8F-9B55-EEC2-963E-CD141526D69B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EB328D8F-9B55-EEC2-963E-CD141526D69B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A8FDB4C2-AFE7-4737-4D37-8101C6BD11F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8FDB4C2-AFE7-4737-4D37-8101C6BD11F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8FDB4C2-AFE7-4737-4D37-8101C6BD11F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8FDB4C2-AFE7-4737-4D37-8101C6BD11F4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{93D8E047-8E09-0B48-A274-147F1BE34923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{93D8E047-8E09-0B48-A274-147F1BE34923}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93D8E047-8E09-0B48-A274-147F1BE34923}.Release|Any CPU.ActiveCfg = Release|Any CPU
