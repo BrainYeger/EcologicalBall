@@ -33,6 +33,14 @@ public class Producer : Individual
     // Start is called before the first frame update
     void Start()
     {
+        NowOrganicMatter = MaxOrganicMatter * MinOrganicMatterRate + 50;
+        MinOrganicMatter = MinOrganicMatterRate * MaxOrganicMatter;
+        OxygenComsuptionTick = OrganicMatterComsuptionTick * OrganicMatterComsuptionToOxygenComsuptionRate;
+        BreatheCarbonDioxideGenerationTick = OxygenComsuptionTick * OxygenComsuptionToCarbonDioxideComsuptionRate;
+        BreatheH20GenerationTick = OxygenComsuptionTick * OxygenComsuptionToH2OComsuptionRate;
+        H2OComsuptionTick = CarbonDioxideComsuptionTick * CarbonDioxideComsuptionToH2OComsuption;
+        OxygenComsuptionTick = CarbonDioxideComsuptionToOxygenGeneration * CarbonDioxideComsuptionTick;
+        OrganicMatterComsuptionTick = CarbonDioxideComsuptionToOrganicMatterGeneration * CarbonDioxideComsuptionTick;
         GameManager.Instance.AllProducer.Add(this);
         NowBlock = GameManager.Instance.FindBlock(transform.position);
     }

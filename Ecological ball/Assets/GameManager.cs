@@ -11,6 +11,8 @@ public class GameManager : Singleton<GameManager>
     public List<Consumer> AllConsumer;
     public List<Producer> AllProducer;
 
+    private int tick;
+
     private double globaloxygen;
     public double GlobalOxygen
     {
@@ -92,15 +94,15 @@ public class GameManager : Singleton<GameManager>
     {
         int x = (int)(pos.x + 4.5);
         if (x < 0)
-            x = 0;
+            return null;
         else if (x > 9)
-            x = 9;
+            return null;
 
         int y = (int)(pos.z + 4.5);
         if (y < 0)
-            y = 0;
+            return null;
         else if (y > 9)
-            y = 9;
+            return null;
 
         return AllBlock[x, y];
     }
@@ -175,7 +177,7 @@ public class GameManager : Singleton<GameManager>
             List<Producer> SelectProducer = new List<Producer>();
             foreach(Producer t in AllProducer)
             {
-                if (t.NowBlock.EqualTo(SelectBlock))
+                if (!t.SuddenDeath && t.NowBlock.EqualTo(SelectBlock))
                 {
                     AllCO2Need += t.CarbonDioxideComsuptionTick;
                     AllH2ONeed += t.H2OComsuptionTick;
@@ -270,16 +272,82 @@ public class GameManager : Singleton<GameManager>
 
     void Start()
     {
-        
+        tick = 0;
     }
 
     void Update()
     {
+        
         AllBreathe();
         AllPhotoSynthesis();
+        List<Consumer> toDes = new List<Consumer>();
+        List<Producer> toDesP = new List<Producer>();
+        if (tick!=10)
+        {
+            tick++;
+            foreach (Consumer t in AllConsumer)
+            {
+                bool isNone;
+                if (!t.Dead(out isNone))
+                    t.Walk();
+                else if (isNone)
+                {
+                    toDes.Add(t);
+                    //Destroy(t.gameObject);
+                }
+            }
+            foreach (Consumer t in toDes)
+            {
+                AllConsumer.Remove(t);
+                Destroy(t.gameObject, 5.0f);
+            }
+
+
+            foreach (Producer t in AllProducer)
+            {
+                bool isNone;
+                t.Dead(out isNone);
+                if (isNone)
+                    toDesP.Add(t);
+            }
+            foreach (Producer t in toDesP)
+            {
+                AllProducer.Remove(t);
+                Destroy(t.gameObject, 5.0f);
+            }
+            return;
+        }
+        tick = 0;
+        
         foreach(Consumer t in AllConsumer)
         {
-            t.Prey();
+            bool isNone;
+            if(!t.Dead(out isNone))
+                t.Prey();
+            else if(isNone)
+            {
+                toDes.Add(t);
+                //Destroy(t.gameObject);
+            }
+        }
+        foreach (Consumer t in toDes)
+        {
+            AllConsumer.Remove(t);
+            Destroy(t.gameObject, 5.0f);
+        }
+
+        
+        foreach(Producer t in AllProducer)
+        {
+            bool isNone;
+            t.Dead(out isNone);
+            if (isNone)
+                toDesP.Add(t);
+        }
+        foreach(Producer t in toDesP)
+        {
+            AllProducer.Remove(t);
+            Destroy(t.gameObject, 5.0f);
         }
     }
 }

@@ -10,7 +10,8 @@
     },
     {
       "name": "/actions/default/in/GrabPinch",
-      "type": "boolean"
+      "type": "boolean",
+      "requirement": "suggested"
     },
     {
       "name": "/actions/default/in/GrabGrip",
@@ -41,7 +42,31 @@
       "requirement": "optional"
     },
     {
+      "name": "/actions/default/in/rightHandler",
+      "type": "vector2"
+    },
+    {
+      "name": "/actions/default/in/rightBG",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/rightA",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/rightB",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/leftHandler",
+      "type": "vector2"
+    },
+    {
       "name": "/actions/default/out/Haptic",
+      "type": "vibration"
+    },
+    {
+      "name": "/actions/default/out/NewAction",
       "type": "vibration"
     },
     {
@@ -77,7 +102,7 @@
   "action_sets": [
     {
       "name": "/actions/default",
-      "usage": "single"
+      "usage": "leftright"
     },
     {
       "name": "/actions/platformer",
@@ -89,6 +114,10 @@
     },
     {
       "name": "/actions/mixedreality",
+      "usage": "single"
+    },
+    {
+      "name": "/actions/NewSet",
       "usage": "single"
     }
   ],

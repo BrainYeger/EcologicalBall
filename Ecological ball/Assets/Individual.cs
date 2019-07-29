@@ -8,6 +8,8 @@ public abstract class Individual : MonoBehaviour
 
     public int LifeTick;
 
+    public bool SuddenDeath;
+
     public FoodChain.ChainMember Special;
 
     public double MaxOrganicMatter;
@@ -34,17 +36,22 @@ public abstract class Individual : MonoBehaviour
         NowOrganicMatter -= omc;
     }
 
-    bool Dead()
+    public bool Dead(out bool isNone)
     {
         LifeTick--;
+        isNone = false;
         if (NowOrganicMatter > MinOrganicMatter && NowLowOxygenTime <= MaxLowOxygenTime)
             return false;
-        if (NowOrganicMatter <= 0 || LifeTick <= 0)
+        if (NowOrganicMatter <= 0)
         {
+            isNone = true;
             //to do , delete this
         }
         else
         {
+            SuddenDeath = true;
+            GetComponent<CreatureAnimation>().Idle();
+            GetComponent<CreatureAnimation>().Death();
             if (NowOrganicMatter < NowBlock.RottingSpeed)
             {
                 NowOrganicMatter = 0;

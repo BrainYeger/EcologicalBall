@@ -7,6 +7,8 @@ public class EnvironmentBlock : MonoBehaviour
     //const int BlockSize = 10;
     //public static EnvironmentBlock [,]AllBlock = new EnvironmentBlock[BlockSize,BlockSize];
 
+    public bool isWater;
+
     public int indexX;
     public int indexY;
 
@@ -19,8 +21,8 @@ public class EnvironmentBlock : MonoBehaviour
     public double OtherVapor;
     public double RottingSpeed;
 
-    public static double RottingRate;
-    public static double DiffusionSpeed = 0.002;
+    public static double RottingRate = 0.005;
+    public static double DiffusionSpeed = 0.0002;
 
     void Diffuse(EnvironmentBlock t)
     {
