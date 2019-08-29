@@ -50,6 +50,15 @@ public class HandlerShooting : MonoBehaviour
             PressedUpShoot();
         }
 
+        if (Input.GetButtonDown("Oculus_GearVR_RIndexTrigger"))
+        {
+            PressedShoot();
+        }
+        else if (Input.GetButtonUp("Oculus_GearVR_RIndexTrigger"))
+        {
+            PressedUpShoot();
+        }
+
         if (IsShooting)
         {
             laser.SetPosition(0, transform.position);

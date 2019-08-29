@@ -109,6 +109,7 @@
     <Compile Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Scripts\Triangles.cs" />
     <Compile Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
     <Compile Include="Assets\Low Poly Animated Animals\Standard Assets\Environment\Water\Water\Scripts\Water.cs" />
+    <Compile Include="Assets\makeCube.cs" />
     <Compile Include="Assets\Malbers Animations\Common\Behaviors\AttackBehaviour.cs" />
     <Compile Include="Assets\Malbers Animations\Common\Behaviors\DamagedBehavior.cs" />
     <Compile Include="Assets\Malbers Animations\Common\Behaviors\FallBehavior.cs" />
@@ -179,6 +180,20 @@
     <Compile Include="Assets\Malbers Animations\Common\Scripts\Utility\StepTrigger.cs" />
     <Compile Include="Assets\Malbers Animations\Common\Scripts\Utility\TransformAnimation.cs" />
     <Compile Include="Assets\Malbers Animations\Common\Scripts\Utility\UseTransform.cs" />
+    <Compile Include="Assets\mmd4\Extensions\Scripts\FullBodyIKUnityChan.cs" />
+    <Compile Include="Assets\mmd4\Extensions\Scripts\FullBodyIKUnityChanBehaviour.cs" />
+    <Compile Include="Assets\mmd4\Scripts\FullBodyIK.cs" />
+    <Compile Include="Assets\mmd4\Scripts\FullBodyIK\BodyIK.cs" />
+    <Compile Include="Assets\mmd4\Scripts\FullBodyIK\Bone.cs" />
+    <Compile Include="Assets\mmd4\Scripts\FullBodyIK\Effector.cs" />
+    <Compile Include="Assets\mmd4\Scripts\FullBodyIK\FingerIK.cs" />
+    <Compile Include="Assets\mmd4\Scripts\FullBodyIK\HeadIK.cs" />
+    <Compile Include="Assets\mmd4\Scripts\FullBodyIK\LimbIK.cs" />
+    <Compile Include="Assets\mmd4\Scripts\FullBodyIK\Math.cs" />
+    <Compile Include="Assets\mmd4\Scripts\FullBodyIK\Types.cs" />
+    <Compile Include="Assets\mmd4\Scripts\FullBodyIK\Utility.cs" />
+    <Compile Include="Assets\mmd4\Scripts\FullBodyIKBehaviour.cs" />
+    <Compile Include="Assets\mmd4\Scripts\FullBodyIKBehaviourBase.cs" />
     <Compile Include="Assets\Producer.cs" />
     <Compile Include="Assets\scripts\AniGlass.cs" />
     <Compile Include="Assets\scripts\AniOtherAni.cs" />
@@ -230,6 +245,7 @@
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionSelective.shader" />
     <None Include="Assets\PolygonNature\Shaders\SyntyStudios_Water.shader" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\Bokeh34.shader" />
+    <None Include="Assets\mmd4\Settings_jp.txt" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
@@ -237,7 +253,9 @@
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
+    <None Include="Assets\zheshe.shader" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrainDX11.shader" />
+    <None Include="Assets\frenier.shader" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
     <None Include="Assets\PolygonNature\Shaders\SyntyStudios_LOD.shader" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableBlur.shader" />
@@ -258,6 +276,8 @@
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
+    <None Include="Assets\mmd4\Readme_jp.txt" />
+    <None Include="Assets\mmd4\Readme_en.txt" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\PrepareSunShaftsBlur.shader" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
     <None Include="Assets\Low Poly Animated Animals\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
@@ -499,6 +519,12 @@
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
       <HintPath>D:/hx/EcologicalBall/Ecological ball/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+    </Reference>
+    <Reference Include="Editor">
+      <HintPath>D:/hx/EcologicalBall/Ecological ball/Assets/Plugins/Octane/Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Runtime">
+      <HintPath>D:/hx/EcologicalBall/Ecological ball/Assets/Plugins/Octane/Runtime.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.3.14f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
